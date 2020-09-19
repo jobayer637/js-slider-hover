@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Slider || Jobayer</title>
+    <style>
+        .slide1 img,
+        .s1i1,
+        .s1i2,
+        .s1i3,
+        .s1i4,
+        .s1i5 {
+            transition: all .5s;
+        }
+
+        .carousel-inner {
+            position: unset;
+
+        }
+
+        .carousel-item {
+            position: unset;
+        }
+
+        .carousel-caption {
+            bottom: 0;
+            top: 150px;
+            left: 55%;
+            right: 0%;
+            color: black;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="h1x"></h1><br>
+
+    </div>
+    <br>
+
+
+    <div class="container p-0 position-relative w-100">
+        <div id="carouselExampleCaptions" class="carousel slide position-relative w-100" data-ride="carousel"
+            data-pause="false">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner position-unset w-100">
+                <div class="carousel-item active position-unset w-100">
+                    <div id="mp" class="slide1 w-100">
+                        <div class="position-absolute s1i1">
+                            <img src="img/bannerSlider/s1/s10.png" class="d-block w-100 s1img1" alt="...">
+                        </div>
+                        <div class="position-absolute s1i2">
+                            <img src="img/bannerSlider/s1/s11.png" class="d-block w-100 s1img2" alt="...">
+                        </div>
+                        <div class="position-absolute s1i3">
+                            <img src="img/bannerSlider/s1/s12.png" class="d-block w-100 s1img3" alt="...">
+                        </div>
+                        <div class="position-absolute s1i4">
+                            <img src="img/bannerSlider/s1/s13.png" class="d-block w-100 s1img4" alt="...">
+                        </div>
+                        <div class="position-absolute s1i5">
+                            <img src="img/bannerSlider/s1/s14.png" class="d-block w-100 s1img5" alt="...">
+                        </div>
+                    </div>
+
+                    <div class="carousel-caption d-none d-md-block position-absolute">
+                        <h3 style="line-height: 40px;">
+                            Lanbda is ultra flexible and lets you create stunning pages easily for any kind of site out
+                            of the box.
+                        </h3>
+                        <button class="btn btn-primary rounded-0 mt-4 btn-lg">Click me up</button>
+                        <button class="btn btn-outline-primary rounded-0 mt-4 btn-lg">Click me down</button>
+                    </div>
+
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <br>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $('#mp').on('mousemove', function (e) {
+            let left = $(this).offset().left
+            let mpos = {
+                x: -left
+            }
+            let px = e.pageX - left - $("#mp").width() / 2
+            if (px > 0) {
+                $(".s1img1").css({
+                    marginLeft: -px / 100 + "%"
+                })
+                $(".s1img2, .s1img3, .s1img4, .s1img5").css({
+                    marginLeft: -px / 80 + "%"
+                })
+            }
+            else if (px < 0) {
+                $(".s1img1").css({
+                    marginLeft: -px / 100 + "%"
+                })
+                $(".s1img2, .s1img3, .s1img4, .s1img5").css({
+                    marginLeft: -px / 50 + "%"
+                })
+            } else {
+                $(".s1img2").css({
+                    marginLeft: '100px'
+                })
+            }
+        })
+    </script>
+</body>
+
+</html>
